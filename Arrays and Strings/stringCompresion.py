@@ -23,7 +23,13 @@ def compress(chars: [str]) -> int:
                 s += char
                 master_cont +=1
 
-            elif cont >= 10:
+            else:
+                s += char
+                x = str(cont)
+                s += x
+                master_cont += (len(x) + 1)
+
+                """elif cont >= 10:
                 string_num = str(cont)
                 s += char
                 master_cont +=1
@@ -31,11 +37,7 @@ def compress(chars: [str]) -> int:
                 for j in string_num:
                     s += j
                     master_cont +=1
-                    x+=1
-            else:
-                s += char
-                s += str(cont)
-                master_cont += 2
+                    x+=1""" 
 
             if index == original_len:
                 print(s)
