@@ -13,12 +13,14 @@ def compress(chars: [str]) -> int:
     s = ""
 
     for i in chars:
+
         index += 1
 
-        if i  == char:
+        if i == char:
             cont+=1
 
         if i != char or original_len == index:
+            
             if cont == 1:
                 s += char
                 master_cont +=1
@@ -40,17 +42,30 @@ def compress(chars: [str]) -> int:
                     x+=1""" 
 
             if index == original_len:
+
+                for j in range(0, len(s)):
+                    chars[j] = s[j]
+    
+                if len(chars) > len(s):
+                    for k in range(len(s),len(chars)):
+                        chars.pop()
+
+                print(len(chars))
+                print(len(s))
                 print(s)
                 print(master_cont)
+                print(chars)
                 return master_cont
             
             char = chars[index-1]
-            cont = 1
+            ###cont = 1
+
 
 
     print(s)
     print(master_cont)
+    print(chars)
     return master_cont
 
-chars = ["a","a","b","b","c","c","c"]
+chars = ["a","b","c"]
 compress(chars)
